@@ -383,6 +383,12 @@ h1 {
     h1 {
       font-size: 1.25rem; } }
 
+h2 {
+  font-size: 2rem; }
+  @media (max-width: 40em) {
+    h2 {
+      font-size: 1rem; } }
+
 h5 {
   font-size: 1rem; }
 
@@ -410,7 +416,7 @@ section.full-page {
     @media (max-width: 40em) and (orientation: landscape) {
       section.full-page #logo {
         margin-top: 1rem; } }
-  section.full-page h1 {
+  section.full-page h1, section.full-page h2 {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: .1em;
