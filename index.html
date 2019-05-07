@@ -105,6 +105,10 @@
       height: 5rem;
       padding: 0 2rem;
     }
+    
+    footer {
+      flex-wrap: wrap;
+    }
 
     main {
       -webkit-flex: 1;
@@ -186,7 +190,12 @@
     .copyright {
       color: #444444;
       opacity: 0.3;
-      margin-left: auto;
+    }
+    
+    @media (min-width: 1024px) {
+      .copyright {
+        margin-left: auto;
+      }
     }
 
     .logo {
