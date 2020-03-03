@@ -1,319 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#333333" />
+    <meta name="msapplication-TileColor" content="#00aba9" />
+    <meta name="theme-color" content="#fafafa" />
+    <meta name="author" content="Christian Söderberg" />
+    <meta
+      name="description"
+      content="I'm a design-driven developer, building things (mostly) for the web. Code is my tool and design is my craft. Both is a passion."
+    />
+    <title>Christian Söderberg | Software developer & UI designer</title>
 
-<head>
-  <meta charset="utf-8" />
-  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#333333">
-  <meta name="msapplication-TileColor" content="#00aba9">
-  <meta name="theme-color" content="#fafafa">
-  <meta name="author" content="Christian Söderberg">
-  <meta name="description"
-    content="I'm a design-driven developer, building things (mostly) for the web. Code is my tool and design is my craft. Both is a passion.">
-  <title>Christian Söderberg | Software developer & UI designer</title>
-
-  <style>
-    /* Minimal CSS Reset */
-    html {
-      box-sizing: border-box;
-      font-size: 14px;
-    }
-    
-    @media (min-width: 768px) {
+    <style>
+      /* Minimal CSS Reset */
       html {
-        font-size: 16px;
+        box-sizing: border-box;
+        font-size: 14px;
       }
-    }
 
-    html,
-    body {
-      height: 100%;
-      min-height: 100%;
-    }
+      @media (min-width: 768px) {
+        html {
+          font-size: 16px;
+        }
+      }
 
-    *,
-    *:before,
-    *:after {
-      box-sizing: inherit;
-    }
+      html,
+      body {
+        height: 100%;
+        min-height: 100%;
+      }
 
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    ol,
-    ul {
-      margin: 0;
-      padding: 0;
-      font-weight: normal;
-    }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
 
-    ol,
-    ul {
-      list-style: none;
-    }
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      ol,
+      ul {
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+      }
 
-    img {
-      max-width: 100%;
-      height: auto;
-    }
+      ol,
+      ul {
+        list-style: none;
+      }
 
-    /* Base typography */
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-        sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      background: #fafafa;
-      background: linear-gradient(138deg, #fafafa, #c1fbec);
-      background-size: 400% 400%;
-      -webkit-animation: boVBFB 6s ease infinite;
-      animation: boVBFB 6s ease infinite;
-    }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
 
-    code {
-      font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
-    }
+      /* Base typography */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+          "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background: #fafafa;
+        background: linear-gradient(138deg, #fafafa, #c1fbec);
+        background-size: 400% 400%;
+        -webkit-animation: boVBFB 6s ease infinite;
+        animation: boVBFB 6s ease infinite;
+      }
 
-    #root {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      min-height: 100%;
-    }
+      code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+      }
 
-    header,
-    footer {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-align-items: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      width: 100%;
-      min-height: 5rem;
-      padding: 1rem 2rem;
-    }
-    
-    footer {
-      flex-wrap: wrap;
-    }
+      #root {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-height: 100%;
+      }
 
-    main {
-      -webkit-flex: 1;
-      -ms-flex: 1;
-      flex: 1;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      -webkit-align-items: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      padding: 0 2rem;
-    }
+      header,
+      footer {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        width: 100%;
+        min-height: 5rem;
+        padding: 1rem 2rem;
+      }
 
-    @media (min-width: 1024px) {
+      footer {
+        flex-wrap: wrap;
+      }
+
       main {
-        padding: 0 10vw 0 5vw;
-      }
-    }
-
-    article {
-      color: #444444;
-      max-width: 55em;
-      margin-bottom: 10vh;
-    }
-
-    article a {
-      color: #444444;
-      font-weight: bolder;
-      -webkit-text-decoration: none;
-      text-decoration: none;
-    }
-
-    article a:hover {
-      -webkit-text-decoration: underline;
-      text-decoration: underline;
-    }
-
-    h1 {
-      font-size: 3.5rem;
-      font-weight: bold;
-      line-height: 1;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.25rem;
-      line-height: 1.5;
-    }
-
-    p+p {
-      margin-top: 1rem;
-    }
-
-    footer > * {
-      color: #444444;
-      opacity: 0.3;
-      line-height: 2;
-    }
-    
-    footer a {
-      -webkit-transition: opacity 0.3s ease-in-out;
-      transition: opacity 0.3s ease-in-out;
-      -webkit-text-decoration: none;
-      text-decoration: none;
-      margin-right: 2rem;
-    }
-
-    footer a:hover {
-      opacity: 1;
-      -webkit-text-decoration: underline;
-      text-decoration: underline;
-    }
-    
-    @media (min-width: 1024px) {
-      .copyright {
-        margin-left: auto;
-      }
-    }
-
-    .logo {
-      width: 1.5rem;
-      height: 1.5rem;
-      fill: #444444;
-      opacity: 0.3;
-      -webkit-transition: opacity 0.3s ease-in-out;
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    .logo:hover {
-      opacity: 1;
-      -webkit-animation: float 1s linear infinite;
-      animation: float 1s linear infinite;
-    }
-
-
-    /* sc-component-id: sc-keyframes-boVBFB */
-    @-webkit-keyframes boVBFB {
-      0% {
-        background-position: 50% 0%;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: 0 2rem;
       }
 
-      50% {
-        background-position: 50% 100%;
+      @media (min-width: 1024px) {
+        main {
+          padding: 0 10vw 0 5vw;
+        }
       }
 
-      100% {
-        background-position: 50% 0%;
-      }
-    }
-
-    @keyframes boVBFB {
-      0% {
-        background-position: 50% 0%;
+      article {
+        color: #444444;
+        max-width: 55em;
+        margin-bottom: 10vh;
       }
 
-      50% {
-        background-position: 50% 100%;
+      article a {
+        color: #444444;
+        font-weight: bolder;
+        -webkit-text-decoration: none;
+        text-decoration: none;
       }
 
-      100% {
-        background-position: 50% 0%;
-      }
-    }
-
-    @-webkit-keyframes float {
-      25% {
-        -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        transform: scale(1.1);
+      article a:hover {
+        -webkit-text-decoration: underline;
+        text-decoration: underline;
       }
 
-      75% {
-        -webkit-transform: scale(0.9);
-        -ms-transform: scale(0.9);
-        transform: scale(0.9);
-      }
-    }
-
-    @keyframes float {
-      25% {
-        -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        transform: scale(1.1);
+      h1 {
+        font-size: 3.5rem;
+        font-weight: bold;
+        line-height: 1;
+        margin-bottom: 1rem;
       }
 
-      75% {
-        -webkit-transform: scale(0.9);
-        -ms-transform: scale(0.9);
-        transform: scale(0.9);
+      p {
+        font-size: 1.25rem;
+        line-height: 1.5;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
+      p + p {
+        margin-top: 1rem;
+      }
+
+      footer > * {
+        color: #444444;
+        opacity: 0.3;
+        line-height: 2;
+      }
+
+      footer a {
+        -webkit-transition: opacity 0.3s ease-in-out;
+        transition: opacity 0.3s ease-in-out;
+        -webkit-text-decoration: none;
+        text-decoration: none;
+        margin-right: 2rem;
+      }
+
+      footer a:hover {
+        opacity: 1;
+        -webkit-text-decoration: underline;
+        text-decoration: underline;
+      }
+
+      @media (min-width: 1024px) {
+        .copyright {
+          margin-left: auto;
+        }
+      }
+
+      .logo {
+        width: 1.5rem;
+        height: 1.5rem;
+        fill: #444444;
+        opacity: 0.3;
+        -webkit-transition: opacity 0.3s ease-in-out;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      .logo:hover {
+        opacity: 1;
+        -webkit-animation: float 1s linear infinite;
+        animation: float 1s linear infinite;
+      }
+
+      /* sc-component-id: sc-keyframes-boVBFB */
+      @-webkit-keyframes boVBFB {
+        0% {
+          background-position: 50% 0%;
+        }
+
+        50% {
+          background-position: 50% 100%;
+        }
+
+        100% {
+          background-position: 50% 0%;
+        }
+      }
+
+      @keyframes boVBFB {
+        0% {
+          background-position: 50% 0%;
+        }
+
+        50% {
+          background-position: 50% 100%;
+        }
+
+        100% {
+          background-position: 50% 0%;
+        }
+      }
+
+      @-webkit-keyframes float {
+        25% {
+          -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          transform: scale(1.1);
+        }
+
+        75% {
+          -webkit-transform: scale(0.9);
+          -ms-transform: scale(0.9);
+          transform: scale(0.9);
+        }
+      }
+
+      @keyframes float {
+        25% {
+          -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          transform: scale(1.1);
+        }
+
+        75% {
+          -webkit-transform: scale(0.9);
+          -ms-transform: scale(0.9);
+          transform: scale(0.9);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KN3ZB5"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KN3ZB5');</script>
-<!-- End Google Tag Manager -->
-  <div id="root">
-    <header class="banner">
-      <svg class="logo" width="32" height="29" viewBox="0 0 32 29">
-        <g fill="none" fill-rule="evenodd" transform="translate(0 -1)">
-          <rect width="32" height="32"></rect>
-          <path fill="#000"
-            d="M11.4823529 23.8117647L9.6 24.9411765C9.41176471 25.0352941 9.41176471 25.2235294 9.50588235 25.4117647L9.97647059 26.2588235C10.0705882 26.3529412 9.97647059 26.5411765 9.88235294 26.5411765L5.17647059 26.5411765C4.98823529 26.5411765 4.98823529 26.4470588 5.08235294 26.2588235L7.43529412 22.2117647C7.52941176 22.1176471 7.62352941 22.1176471 7.71764706 22.2117647L8.18823529 23.0588235C8.28235294 23.2470588 8.47058824 23.2470588 8.65882353 23.1529412L10.5411765 22.0235294C10.7294118 21.9294118 10.7294118 21.7411765 10.6352941 21.5529412L7.81176471 16.7529412C7.62352941 16.4705882 7.43529412 16.4705882 7.24705882 16.7529412L3.29411765 23.6235294.376470588 28.7058824C.188235294 28.9882353.376470588 29.1764706.658823529 29.1764706L14.4941176 29.1764706C14.7764706 29.1764706 14.9647059 28.9882353 14.7764706 28.7058824L11.9529412 23.9058824C11.7647059 23.8117647 11.5764706 23.7176471 11.4823529 23.8117647zM21.7411765 12.2352941L13.4588235 16.9411765C13.2705882 17.0352941 13.0823529 16.9411765 12.9882353 16.8470588L11.7647059 14.6823529C11.6705882 14.5882353 11.6705882 14.4941176 11.7647059 14.4L15.9058824 7.15294118 18.3529412 11.3882353C18.4470588 11.5764706 18.6352941 11.5764706 18.8235294 11.4823529L20.7058824 10.3529412C20.8941176 10.2588235 20.8941176 10.0705882 20.8 9.88235294L19.2 7.05882353 16.2823529 1.97647059C16.0941176 1.69411765 15.9058824 1.69411765 15.7176471 1.97647059L8.56470588 14.3058824C8.47058824 14.4 8.47058824 14.4941176 8.56470588 14.5882353L12.0470588 20.6117647C12.1411765 20.8 12.3294118 20.8 12.5176471 20.7058824L20.8 15.9058824C20.9882353 15.8117647 21.1764706 15.9058824 21.2705882 16L26.9176471 25.7882353C27.0117647 25.9764706 26.9176471 26.2588235 26.6352941 26.2588235L18.8235294 26.2588235C18.7294118 26.2588235 18.6352941 26.1647059 18.5411765 26.0705882L15.8117647 21.3647059C15.7176471 21.1764706 15.5294118 21.1764706 15.3411765 21.2705882L13.4588235 22.4C13.2705882 22.4941176 13.2705882 22.6823529 13.3647059 22.8705882L16.8470588 28.8941176C16.9411765 28.9882353 17.0352941 29.0823529 17.1294118 29.0823529L31.3411765 29.0823529C31.6235294 29.0823529 31.8117647 28.8941176 31.6235294 28.6117647L22.2117647 12.4235294C22.1176471 12.2352941 21.9294118 12.1411765 21.7411765 12.2352941z">
-          </path>
-        </g>
-      </svg>
-    </header>
-    <main>
-      <article>
-        <h1>Hello World</h1>
-        <p>I'm <b>Christian Söderberg</b>, a design-driven developer, building things (mostly) for the web. Code is my
-          tool and design is my craft. Both is a passion.</p>
-        <p>Currently employed as a software developer and UI designer at <a href="https://tretton37.com/">tretton37</a>.
-        </p>
-      </article>
-    </main>
-    <footer class="banner">
-      <a href="https://linkedin.com/in/christiansoderberg/">LinkedIn</a>
-      <a href="https://github.com/Crustan">GitHub</a>
-      <a href="mailto:hej@christiansoderberg.se">Email</a>
-      <span class="copyright">© 2019 Christian Söderberg</span>
-    </footer>
-  </div>
-</body>
-
+    <noscript
+      ><iframe
+        src="//www.googletagmanager.com/ns.html?id=GTM-KN3ZB5"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe
+    ></noscript>
+    <script>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "//www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KN3ZB5");
+    </script>
+    <!-- End Google Tag Manager -->
+    <div id="root">
+      <header class="banner">
+        <svg class="logo" width="32" height="29" viewBox="0 0 32 29">
+          <g fill="none" fill-rule="evenodd" transform="translate(0 -1)">
+            <rect width="32" height="32"></rect>
+            <path
+              fill="#000"
+              d="M11.4823529 23.8117647L9.6 24.9411765C9.41176471 25.0352941 9.41176471 25.2235294 9.50588235 25.4117647L9.97647059 26.2588235C10.0705882 26.3529412 9.97647059 26.5411765 9.88235294 26.5411765L5.17647059 26.5411765C4.98823529 26.5411765 4.98823529 26.4470588 5.08235294 26.2588235L7.43529412 22.2117647C7.52941176 22.1176471 7.62352941 22.1176471 7.71764706 22.2117647L8.18823529 23.0588235C8.28235294 23.2470588 8.47058824 23.2470588 8.65882353 23.1529412L10.5411765 22.0235294C10.7294118 21.9294118 10.7294118 21.7411765 10.6352941 21.5529412L7.81176471 16.7529412C7.62352941 16.4705882 7.43529412 16.4705882 7.24705882 16.7529412L3.29411765 23.6235294.376470588 28.7058824C.188235294 28.9882353.376470588 29.1764706.658823529 29.1764706L14.4941176 29.1764706C14.7764706 29.1764706 14.9647059 28.9882353 14.7764706 28.7058824L11.9529412 23.9058824C11.7647059 23.8117647 11.5764706 23.7176471 11.4823529 23.8117647zM21.7411765 12.2352941L13.4588235 16.9411765C13.2705882 17.0352941 13.0823529 16.9411765 12.9882353 16.8470588L11.7647059 14.6823529C11.6705882 14.5882353 11.6705882 14.4941176 11.7647059 14.4L15.9058824 7.15294118 18.3529412 11.3882353C18.4470588 11.5764706 18.6352941 11.5764706 18.8235294 11.4823529L20.7058824 10.3529412C20.8941176 10.2588235 20.8941176 10.0705882 20.8 9.88235294L19.2 7.05882353 16.2823529 1.97647059C16.0941176 1.69411765 15.9058824 1.69411765 15.7176471 1.97647059L8.56470588 14.3058824C8.47058824 14.4 8.47058824 14.4941176 8.56470588 14.5882353L12.0470588 20.6117647C12.1411765 20.8 12.3294118 20.8 12.5176471 20.7058824L20.8 15.9058824C20.9882353 15.8117647 21.1764706 15.9058824 21.2705882 16L26.9176471 25.7882353C27.0117647 25.9764706 26.9176471 26.2588235 26.6352941 26.2588235L18.8235294 26.2588235C18.7294118 26.2588235 18.6352941 26.1647059 18.5411765 26.0705882L15.8117647 21.3647059C15.7176471 21.1764706 15.5294118 21.1764706 15.3411765 21.2705882L13.4588235 22.4C13.2705882 22.4941176 13.2705882 22.6823529 13.3647059 22.8705882L16.8470588 28.8941176C16.9411765 28.9882353 17.0352941 29.0823529 17.1294118 29.0823529L31.3411765 29.0823529C31.6235294 29.0823529 31.8117647 28.8941176 31.6235294 28.6117647L22.2117647 12.4235294C22.1176471 12.2352941 21.9294118 12.1411765 21.7411765 12.2352941z"
+            ></path>
+          </g>
+        </svg>
+      </header>
+      <main>
+        <article>
+          <h1>Hello World</h1>
+          <p>
+            I'm <b>Christian Söderberg</b>, a design-driven developer, building things (mostly) for
+            the web. Code is my tool and design is my craft. Both is a passion.
+          </p>
+          <p>
+            Currently employed as a software developer and UI designer at
+            <a href="https://tretton37.com/">tretton37</a>.
+          </p>
+        </article>
+      </main>
+      <footer class="banner">
+        <a href="https://linkedin.com/in/christiansoderberg/">LinkedIn</a>
+        <a href="https://github.com/Crustan">GitHub</a>
+        <a href="mailto:hej@christiansoderberg.se">Email</a>
+        <span class="copyright">© 2020 Christian Söderberg</span>
+      </footer>
+    </div>
+  </body>
 </html>
