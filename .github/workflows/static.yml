@@ -40,6 +40,6 @@ jobs:
           git status
           git add .
           git commit -m "Minify HTML"
-          git push
+          git push origin build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
