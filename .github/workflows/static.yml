@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Copy source code and minify to GitHub Pages branch
 
 on:
   push:
@@ -7,17 +7,6 @@ on:
       - source
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
-# # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-# permissions:
-#   contents: read
-#   pages: write
-#   id-token: write
-
-# # Allow one concurrent deployment
-# concurrency:
-#   group: "pages"
-#   cancel-in-progress: true
 
 jobs:
   update-main:
