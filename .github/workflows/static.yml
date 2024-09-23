@@ -1,50 +1,40 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Copy source code and minify to GitHub Pages branch
 
 on:
   push:
     branches: 
-      - source
+      - main
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-# permissions:
-#   contents: read
-#   pages: write
-#   id-token: write
-
-# # Allow one concurrent deployment
-# concurrency:
-#   group: "pages"
-#   cancel-in-progress: true
-
 jobs:
-  update-main:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout main
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 
+
       - name: Set up Git
         run: |
           git config user.name 'github-actions'
           git config user.email 'github-actions@github.com'
-      - name: Merge source into main
-        run: |
-          git checkout main
-          git merge source --no-ff
+
       - name: Minify HTML
         uses: docker://textadi/minifier-compressor-html-action:v2
         env:
           DIR: .
           PARAM_MINIFY_CSS: True
           PARAM_MINIFY_JS: True
-      - name: Commit and push to main
+      
+      - name: Commit minified files to build branch
         run: |
+          git checkout -b build || git checkout build
           git add .
-          git commit -m "Update main from source and minify HTML"
-          git push origin main
+          git commit -m "Minify HTML"
+          git push origin build -f
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
