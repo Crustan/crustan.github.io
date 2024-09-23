@@ -39,6 +39,6 @@ jobs:
         run: |
           git add .
           git commit -m "Minify HTML"
-          git push origin build
+          git push origin build --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
