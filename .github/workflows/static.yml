@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Copy source code and minify to GitHub Pages branch
+name: Minify to build branch
 
 on:
   push:
@@ -37,8 +37,9 @@ jobs:
       
       - name: Commit minified files to build branch
         run: |
+          git status
           git add .
           git commit -m "Minify HTML"
-          git push origin build -f
+          git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
