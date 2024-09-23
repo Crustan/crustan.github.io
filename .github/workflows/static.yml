@@ -34,8 +34,17 @@ jobs:
       - name: Merge source into main
         run: |
           git checkout main
-          git merge source --no-ff --commit -m "Update main from source"
-      - name: Push to main
-        run: git push origin main
+          git merge source --no-ff
+      - name: Minify HTML
+        uses: docker://textadi/minifier-compressor-html-action:v2
+        env:
+          DIR: .
+          PARAM_MINIFY_CSS: True
+          PARAM_MINIFY_JS: True
+      - name: Commit and push to main
+        run: |
+          git add .
+          git commit -m "Update main from source and minify HTML"
+          git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
