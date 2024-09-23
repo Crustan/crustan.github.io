@@ -36,11 +36,11 @@ jobs:
           git checkout main
           git merge source --no-ff
       - name: Minify HTML
-        run: npx html-minifier-terser \
-          --collapse-whitespace \
-          --remove-comments \
-          --minify-css true \
-          --minify-js true \
+        uses: docker://textadi/minifier-compressor-html-action:v2
+        env:
+          DIR: .
+          PARAM_MINIFY_CSS: True
+          PARAM_MINIFY_JS: True
       - name: Commit and push to main
         run: |
           git add .
